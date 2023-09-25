@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="styleSheet" href="chat.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Anotação</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Anotação</title>
+        <style>
+            /* Estilo para a página de exemplo */
+            .card {
+                width: 300px;
+                margin: 0 auto;
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+    
+            .message-list {
+                list-style-type: none;
+                padding: 0;
+            }
+    
+            .message-item {
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="chat-header">Chat</div>
+            <div class="chat-window">
+                <ul class="message-list" id="messageList">
+                    <!-- As mensagens do chat aparecerão aqui -->
+                </ul>
+            </div>
+            <div class="chat-input">
+                <!-- Formulário para o usuário enviar mensagens -->
+                <form id="message-form">
+                    <input type="text" class="message-input" placeholder="Type your message here" id="message-input" required>
+                    <button class="send-button" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    
+        <script>
+            document.getElementById('message-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                // Obter o valor da mensagem e o elemento de lista de mensagens
+                var messageInput = document.getElementById('message-input');
+                var messageText = messageInput.value;
+                var messageList = document.getElementById('messageList');
+    
+                // Criar um novo item de lista com o nome de usuário e a mensagem
+                var messageItem = document.createElement('li');
+                messageItem.className = 'message-item';
+                messageItem.textContent = 'admin01: ' + messageText;
+    
+                // Adicionar o novo item de lista à lista de mensagens
+                messageList.appendChild(messageItem);
+    
+                // Limpar o campo de entrada
+                messageInput.value = '';
+            });
+        </script>
+    </body>
+    </html>
